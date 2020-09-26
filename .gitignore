@@ -1,6 +1,0 @@
-cat .gitignore
-
-.DS_Store
-*.LOG
-__Previews/
-History/
