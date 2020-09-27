@@ -152,7 +152,7 @@
         transition: transform .2s, opacity .1s; /* Animation */
       }
       .peekaboo:active {
-        transform: translateY(-125%) scale(1.75);
+        transform: translateY(-127%) scale(1.75);
         opacity: 100%;
       }
 
@@ -228,11 +228,14 @@ name: template_slide
 ---
 name: S1
 
-# Key Features
+# Key Hardware Design Features
 
 - Programmable Gain Amplifier
 - SMT PCB Design
 - Built-in ATmega328PB microcontroller
+
+# Project Management
+- Use of Git, Slack and Trello to effectively manage the project
 
 ---
 name: S2
@@ -251,7 +254,9 @@ Chosen to solve the problem of low voltage resolution for small signals, especia
 ]
 
 .right-column[
-.right[<img src="img/intro/PGA.png" width="300px">]
+.right[<img src="img/intro/PGA.png" width="200px" style="
+    transform: translateY(20%)  translateX(-20%);
+">]
 ]
 ---
 
@@ -264,9 +269,9 @@ name: S3
 - Closer to what is used in industry
 - Will give experience with reflow techniques
 .zoom175[
-.center[<img src="img/intro/smt.png" width="300px">]]
+.center[<img src="img/intro/smt.png" width="275px">]]
 .peekaboo[
-.center[<img src="img/intro/3d.png" width="300px">]
+.center[<img src="img/intro/3d.png" width="275px">]
 ]
 
 
@@ -276,9 +281,10 @@ name: S4
 
 # Built-in ATmega328PB Microcontroller
 
-- Allows for the shortest possible signal runs, reducing the potential for noise.
-- Allows for a much more compact design with no piggy-back PCB.
+- Allows for the shortest possible signal runs, reducing the potential for noise
+- Allows for a much more compact design with no piggy-back PCB
 - Clocked at 16MHz, regulated by external crystal
+  - Option to run at a lower frequency to conserve power, which is not possible with a development board
 - 5V Vcc ARef with external capacitor
 - ISP programming from header
 - User LED provided for testing/debugging
@@ -287,6 +293,22 @@ name: S4
 .right[<img src="img/intro/atmega.png" width="500px" style="
     transform: translateY(-30%);
 ">]
+
+---
+
+name: S5
+
+# Project Management
+
+- Git used for version control of project
+  - Major design features implemented by branching and merging
+  - Easily review each other's work
+- Slack used for team communication
+  - Convenient zoom integration for team meetings and reviews with staff
+- Trello used for kanban-boarding
+  - Track and assign tasks
+  - Resolve issues
+  - Create meeting agendas and take minutes
 
 ---
 
