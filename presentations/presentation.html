@@ -134,7 +134,7 @@
       }
 
       .zoom175 {
-        transition: transform .2s; /* Animation */
+        transition: transform 0.5s; /* Animation */
       }
 
       .zoom175:hover {
@@ -149,7 +149,7 @@
       .peekaboo {
         transform: translateY(-10%) scale(1.75);
         opacity: 0%;
-        transition: transform .2s, opacity .1s; /* Animation */
+        transition: transform 0.5s, opacity 0.25s; /* Animation */
       }
       .peekaboo:active {
         transform: translateY(-127%) scale(1.75);
@@ -157,7 +157,7 @@
       }
 
       .zoom350 {
-        transition: transform .2s; /* Animation */
+        transition: transform 0.5s; /* Animation */
       }
 
       .zoom350:hover {
@@ -167,6 +167,13 @@
 
       .color-grey{
         color: #919191;
+      }
+
+      .S53d:hover {
+        transform: rotate(-180deg) scale(3) translateX(7.5rem) translateY(3rem);
+      }
+      .S53d {
+        transition: 2s;
       }
 
     </style>
@@ -215,7 +222,7 @@ count: false
 # Smart Energy Monitor
 ### Team 25
 
-.TitleAuthor[Keith Anderson, Russell Eskildsen, Yulia Pechorina, Nishan Shrestha]
+.TitleAuthor[Keith Anderson, Russell Eskildsen, Yulia Pechorina, and Nishan Shrestha]
 
 ---
 
@@ -223,38 +230,82 @@ layout: true
 name: template_slide
 
 .logo-slide[]
-.footer[Team 25: Keith Anderson, Russel Eskilden, Yulia Pechorina, Nishan Shrestha]
+.footer[Team 25: Keith Anderson, Russell Eskildsen, Yulia Pechorina, and Nishan Shrestha]
 
 ---
+
 name: S1
 
-# Key Hardware Design Features
+# Project Brief
+Design a smart energy monitor with bluetooth connectivity
 
-- Programmable Gain Amplifier
-- SMT PCB Design
-- Built-in ATmega328PB microcontroller
-
-# Project Management
-- Use of Git, Slack and Trello to effectively manage the project
+# Design Goals
+- Maximise learning
+- Reflect industry standards
+- Design a compact PCB up to 100mm x 100mm
+- Maximise accuracy
 
 ---
+
 name: S2
+
+# Key Hardware Design Features
+- Programmable Gain Amplifier
+  - Achieves increased dynamic range, maximising accuracy
+  - Uses SPI serial communication protocol, maximising learning
+- SMT PCB Design
+  - Allows for a much more compact design
+  - Industry standard PCB type
+  - Maximises accuracy by decreasing signal trace lengths
+  - Is more challenging to design for than through-hole, maximising learning
+- Built-in ATmega328PB microcontroller
+  - Allows for a much more compact design
+  - Industry standard method for implementing a microcontroller
+  - Maximises accuracy by decreasing signal trace lengths
+  - Maximises accuracy by giving potential for decreased power draw
+  - Maximises learning by adding complexity to PCB design
+
+
+---
+
+name: S2.5
+
+# Project Management
+The following software is being used to help effectively manage the project
+- Git
+  - Version control
+- Slack
+  - Team communications
+- Trello
+  - Kanban-boarding
+
+
+---
+
+
+name: S3
 
 # Programmable Gain Amplifier
 Microchip MCP6S93<br  />
-Chosen to solve the problem of low voltage resolution for small signals, especially small current signals.
+Chosen to improve accuracy of small signals and improve dynamic range especially for the low current signals.
 
 .right-column[
 .right[<img src="img/intro/PGA.png" width="200px" style="
     transform: translateY(20%)  translateX(-20%);
 ">]
+<span style="
+    font-size: 0.8rem;
+    transform: translateX(-19px);
+    transform: translateY(4rem) !important;
+    display: flex;
+">https://www.microchip.com/wwwproducts/en/MCP6S93</span>
 ]
 
 .left-column[
 - Rail-to-rail operation
 - 2 channels
 - SPI programming
-- Selectable gains of 1, 2, 4, 5, 8, 10, 16 and 32.
+- Selectable gains of 1, 2, 4, 5, <b>8, 10, 16</b> and 32.
 .zoom350[
 .center[<img src="img/intro/hysteresis.png" width="300px">]]
 ]
@@ -262,7 +313,7 @@ Chosen to solve the problem of low voltage resolution for small signals, especia
 
 ---
 
-name: S3
+name: S4
 
 # SMT Design
 
@@ -279,29 +330,30 @@ name: S3
 
 ---
 
-name: S4
+name: S5
 
 # Built-in ATmega328PB Microcontroller
 
-- Allows for the shortest possible signal runs, reducing the potential for noise
-- Allows for a much more compact design with no piggy-back PCB
+.left-column[
+- Allows for the shortest possible signal traces, reducing the potential for picking up noise
+- Allows for a much more compact design with no plug-in development board
 - Clocked at 16MHz, regulated by external crystal
   - Option to run at a lower frequency to conserve power, which is not possible with a development board
 - 5V Vcc ARef with external capacitor
+  - Chosen as the PGA operates off of the 0V and Vcc rails.
 - ISP programming from header
 - User LED provided for testing/debugging
 - External reset tactile pushbutton
-
-.right[<img src="img/intro/atmega.png" width="500px" style="
-    transform: translateY(-50%);
-">]
-
+]
+.right-column[
+<img src="img/intro/3d.png" width="300px" style="" class="S53d">
+]
 ---
 
-name: S5
+name: S6
 
 # Project Management
-
+.left-column[
 - Git used for version control of project
   - Major design features implemented by branching and merging
   - Easily review each other's work
@@ -311,7 +363,10 @@ name: S5
   - Track and assign tasks
   - Resolve issues
   - Create meeting agendas and take minutes
-
+]
+.right-column[
+<img src="img/intro/git.gif" width="350px">
+]
 ---
 
 class: title-slide
